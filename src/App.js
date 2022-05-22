@@ -13,9 +13,8 @@ function App() {
       <Navbar></Navbar>
       <Routes>
       <Route path='/' element={<Home />} />
-      <Route path='/tool/:toolId'
+      <Route path='/purchase/:toolId'
           element={
-            
               <ToolDetail />
             } />
       <Route path='/about' element={<About />} />
