@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import About from './Pages/About/About';
 import Home from './Pages/Home/Home';
+import ToolDetail from './Pages/Home/ToolDetail';
 import Login from './Pages/Login/Login';
 import Contact from './Pages/Shared/Contact';
 import Navbar from './Pages/Shared/Navber';
@@ -12,6 +13,11 @@ function App() {
       <Navbar></Navbar>
       <Routes>
       <Route path='/' element={<Home />} />
+      <Route path='/tool/:toolId'
+          element={
+            
+              <ToolDetail />
+            } />
       <Route path='/about' element={<About />} />
       <Route path='/contact' element={<Contact />} />
       <Route path='/login' element={<Login />} />
