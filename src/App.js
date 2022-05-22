@@ -5,6 +5,7 @@ import Blogs from './Pages/Blogs/Blogs';
 import Home from './Pages/Home/Home';
 import ToolDetail from './Pages/Home/ToolDetail';
 import Login from './Pages/Login/Login';
+import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import Contact from './Pages/Shared/Contact';
 import Navbar from './Pages/Shared/Navber';
 
@@ -20,6 +21,7 @@ function App() {
             } />
       <Route path='/about' element={<About />} />
       <Route path='/blog' element={<Blogs />} />
+      <Route path='/portfolio' element={<MyPortfolio />} />
       <Route path='/contact' element={<Contact />} />
       <Route path='/login' element={<Login />} />
       </Routes>
