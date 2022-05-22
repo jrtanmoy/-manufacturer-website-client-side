@@ -7,7 +7,7 @@ import offer from '../../assets/images/offer.png'
 const WeProvide = () => {
     return (
         <section className='my-40'>
-            <h1 className='text-4xl font-bold text-center mb-6 pb-10 text-transparent bg-clip-text bg-gradient-to-br from-accent to-secondary'>We Provide</h1>
+            <h1 className='text-4xl text-secondary text-center font-bold my-8'>We Provide</h1>
             <div class="divider mb-10"></div>
             <div className='footer gap-x-10'>
                 <div className='flex gap-x-2'>

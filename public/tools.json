@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Hammer",
+        "price": "250",
+        "minimumQuantity": "100",
+        "availableQuantity": "1000",
+        "description": "The variety of Rice that we are offering to the market is Parboiled Rice. In accordance to the length of the grains.",
+        "img": "https://i.ibb.co/NSpN8PF/hammer.png"
+    },
+    {
+        "id": 2,
+        "name": "Wrench",
+        "price": "240",
+        "minimumQuantity": "120",
+        "availableQuantity": "1200",
+        "description": "The variety of Flour that we are offering to the market is White Flour. We package our Flour in automatic machine.",
+        "img": "https://i.ibb.co/DLvNcMz/wrench.png"
+    },
+    
+    {
+        "id": 3,
+        "name": "Pliers",
+        "price": "280",
+        "minimumQuantity": "80",
+        "availableQuantity": "800",
+        "description": "The variety of Lentil that we are offering to the market is Red Lentil. Lentils must be fresh and in good Shape.",
+        "img": "https://i.ibb.co/d4rwSqw/pliers.png"
+    }
+    
+    
+]

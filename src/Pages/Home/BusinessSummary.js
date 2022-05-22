@@ -4,8 +4,8 @@ import businessSummary from '../../assets/images/business-summary.png'
 const BusinessSummary = () => {
     return (
         <div>
-            <div className='text-center mb-10 pb-8'>
-                <h1 className="text-5xl font-bold">Business Summary</h1>
+            <div className='text-center mt-16 py-8'>
+                <h1 className="text-4xl text-secondary text-center font-bold">Business Summary</h1>
             </div>
             <div className="hero">
                 <div className="hero-content flex-col lg:flex-row-reverse">
