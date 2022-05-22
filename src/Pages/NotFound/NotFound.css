@@ -1,0 +1,11 @@
+.around-link :hover {
+    color: salmon;
+}
+
+.homepage-link {
+    font-size: x-large;
+    font-weight: 500;
+    text-decoration: none;
+    color: black;
+
+}
