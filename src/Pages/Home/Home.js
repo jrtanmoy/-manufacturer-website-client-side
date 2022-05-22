@@ -2,8 +2,9 @@ import React from 'react';
 import Footer from '../Shared/Footer';
 import Banner from './Banner';
 import BusinessSummary from './BusinessSummary';
-import Contact from './Contact';
+import Contact from '../Shared/Contact';
 import Testimonials from './Testimonials.js';
+import WeProvide from './WeProvide';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <Banner></Banner>
             <BusinessSummary></BusinessSummary>
             <Testimonials></Testimonials>
+            <WeProvide></WeProvide>
             <Contact></Contact>
             <Footer></Footer>
         </div>

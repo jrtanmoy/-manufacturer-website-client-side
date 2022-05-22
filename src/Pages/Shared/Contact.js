@@ -1,12 +1,12 @@
 import React from "react";
 import toolsBackground from '../../assets/images/tools1.jpg';
-import PrimaryButton from "../Shared/PrimaryButton";
+import PrimaryButton from "./PrimaryButton";
 
 const Contact = () => {
     return (
         <div>
             <div>
-            <h1 className='text-5xl font-bold text-center mb-6 pb-10 text-transparent bg-clip-text bg-gradient-to-br from-accent to-secondary'>
+            <h1 className='text-4xl font-bold text-center mb-6 pb-10 text-transparent bg-clip-text bg-gradient-to-br from-accent to-secondary'>
                 Contact Us
             </h1>
             </div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import businessSummary from '../../assets/images/business-summary.png'
-import PrimaryButton from '../Shared/PrimaryButton';
 
 const BusinessSummary = () => {
     return (
