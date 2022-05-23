@@ -48,7 +48,7 @@ const ToolDetail = () => {
             return;
         }
 
-        const item = {
+        const purchase = {
             name: user.displayName,
             email: user.email,
             address: event.target.address.value,
@@ -57,8 +57,21 @@ const ToolDetail = () => {
             quantity: event.target.quantity.value
 
         }
-        console.log(item);
-        event.target.reset();
+
+        fetch('http://localhost:5000/purchase', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(purchase)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.insertedId) {
+                toast('You successfully purchase the item!!');
+                event.target.reset();
+            }
+        })
 
 
     }
@@ -100,10 +113,6 @@ const ToolDetail = () => {
                                 <input className="input input-bordered w-full max-w-xs mt-1" type="number"
                                 defaultValue={tool.minimumQuantity} name="quantity" placeholder='Quantity' required />
                                 <br />
-                                {
-                                   
-                                }
-                                {/* <input className="input input-bordered ml-6 w-3/12 max-w-xs mt-2" type="submit" value="Purchase" /> */}
                                 <button className="btn mt-2" type='submit' disabled={isDisabled}>Purchase</button>
                             </form>
                         </div>
