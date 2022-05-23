@@ -5,6 +5,7 @@ import Blogs from './Pages/Blogs/Blogs';
 import Home from './Pages/Home/Home';
 import ToolDetail from './Pages/Home/ToolDetail';
 import Login from './Pages/Login/Login';
+import RequireAuth from './Pages/Login/RequireAuth';
 import SignUp from './Pages/Login/SignUp';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import NotFound from './Pages/NotFound/NotFound';
@@ -19,7 +20,7 @@ function App() {
       <Route path='/' element={<Home />} />
       <Route path='/purchase/:toolId'
           element={
-              <ToolDetail />
+              <RequireAuth><ToolDetail /></RequireAuth>
             } />
       <Route path='/about' element={<About />} />
       <Route path='/blog' element={<Blogs />} />

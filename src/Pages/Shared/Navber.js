@@ -1,14 +1,19 @@
-import { signOut } from 'firebase/auth';
-import React from 'react';
+import {signOut } from 'firebase/auth';
+
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import titleImage from '../../assets/images/manufacture-title-image.png'
 import auth from '../../firebase.init';
+import Loading from './Loading';
 
 const Navbar = () => {
 
-    const [user] = useAuthState(auth);
-    console.log(user?.displayName);
+    const [user, loading] = useAuthState(auth);
+    
+    if(loading){
+        return <Loading></Loading>
+    }
+    console.log(user);
 
     const logout = () => {
         signOut(auth);
@@ -21,7 +26,7 @@ const Navbar = () => {
         <li><Link to="/blog">Blogs</Link></li>
         <li><Link to="/portfolio">My Portfolio</Link></li>
         <li>{user ? <>
-            <h1>{user?.displayName}</h1>
+            <span>{user?.displayName}</span>
             <button class="btn btn-ghost" onClick={logout} >Sign Out</button>
         </> : <Link to="/login">Login</Link>}</li>
     </>
