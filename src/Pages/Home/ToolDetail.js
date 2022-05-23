@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 
 
@@ -8,6 +9,7 @@ const ToolDetail = () => {
     const { toolId } = useParams();
     const [tool, setTool] = useState({});
     const [user] = useAuthState(auth);
+    const [isDisabled, setDisabled] = useState(false);
 
 
 
@@ -22,15 +24,41 @@ const ToolDetail = () => {
     const handlePurchase = event => {
         event.preventDefault();
 
+        const {minimumQuantity} = tool;
+        const minQuantity = parseInt(minimumQuantity)
+        console.log(minQuantity);
+        const {availableQuantity} = tool;
+        const availQuantity = parseInt(availableQuantity)
+        console.log(availQuantity);
+
+        const quantity = parseInt(event.target.quantity.value)
+        console.log(quantity);
+        
+
+        if(quantity < minQuantity){
+            toast(`you have to purchase at last ${minQuantity} quantity`)
+            setDisabled(true);
+            event.target.reset();
+            return;
+        }
+        if(availQuantity < quantity){
+            toast(`you can order maximum ${availQuantity} quantity`)
+            setDisabled(true);
+            event.target.reset();
+            return;
+        }
+
         const item = {
             name: user.displayName,
             email: user.email,
             address: event.target.address.value,
             phone: event.target.phone.value,
-            quantity: event.target.quantity.value,
+            price: event.target.price.value,
+            quantity: event.target.quantity.value
 
         }
         console.log(item);
+        event.target.reset();
 
 
     }
@@ -66,11 +94,17 @@ const ToolDetail = () => {
                                 <br />
                                 <input className="input input-bordered w-full max-w-xs mt-1" type="text" name="phone" placeholder="Phone Number"  />
                                 <br />
-                                <input className="input input-bordered w-full max-w-xs mt-1" type="number" name="quantity" placeholder='Quantity' />
+                                <input className="input input-bordered w-full max-w-xs mt-1" type="text"
+                                value={"$" + tool.price + " /per unit"} name="price" placeholder="Price"  />
                                 <br />
-
-                                <input className="input input-bordered ml-6 w-3/12 max-w-xs mt-2" type="submit" value="Purchase" />
-
+                                <input className="input input-bordered w-full max-w-xs mt-1" type="number"
+                                defaultValue={tool.minimumQuantity} name="quantity" placeholder='Quantity' required />
+                                <br />
+                                {
+                                   
+                                }
+                                {/* <input className="input input-bordered ml-6 w-3/12 max-w-xs mt-2" type="submit" value="Purchase" /> */}
+                                <button className="btn mt-2" type='submit' disabled={isDisabled}>Purchase</button>
                             </form>
                         </div>
 
