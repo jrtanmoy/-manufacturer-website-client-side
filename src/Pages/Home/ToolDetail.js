@@ -51,6 +51,7 @@ const ToolDetail = () => {
         const purchase = {
             name: user.displayName,
             email: user.email,
+            productname: event.target.productName.value,
             address: event.target.address.value,
             phone: event.target.phone.value,
             price: event.target.price.value,
@@ -103,6 +104,7 @@ const ToolDetail = () => {
                                 <br />
                                 <input className="input input-bordered w-full max-w-xs mt-1" type="email" value={user?.email} name="email" placeholder='email' required readOnly disabled />
                                 <br />
+                                <input className="input input-bordered w-full max-w-xs mt-1" type="text" value={tool.name} name="productName" placeholder='product name' required readOnly disabled />
                                 <input className="input input-bordered w-full max-w-xs mt-1" type="text" name="address" placeholder='Address'  />
                                 <br />
                                 <input className="input input-bordered w-full max-w-xs mt-1" type="text" name="phone" placeholder="Phone Number"  />
