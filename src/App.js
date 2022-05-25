@@ -22,6 +22,7 @@ import RequireAdmin from './Pages/Login/RequireAdmin';
 import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import Payment from './Pages/Dashboard/Payment';
+import ManageProduct from './Pages/Dashboard/ManageProduct';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
             <Route path='users' element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
             <Route path='manageOrder' element={<RequireAdmin><ManageAllOrders></ManageAllOrders></RequireAdmin>}></Route>
             <Route path='addproduct' element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>}></Route>
+            <Route path='manageproduct' element={<RequireAdmin><ManageProduct></ManageProduct></RequireAdmin>}></Route>
           </Route>
         <Route path='/about' element={<About />} />
         <Route path='/blog' element={<Blogs />} />

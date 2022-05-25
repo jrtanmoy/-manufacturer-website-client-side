@@ -68,17 +68,20 @@ const MyOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            purchases.map((a, index) => <tr>
+                            purchases.map((a, index) => <tr key={a._id}>
                                 <th>{index + 1}</th>
                                 <td>{a.name}</td>
                                 <td>{a.productname}</td>
                                 {/* <td>{a._id}</td> */}
                                 <td>{a.quantity}</td>
                                 <td>${a.price * a.quantity}</td>
-                                <td><button onClick={() => handleDelete(a._id)} class="btn btn-xs btn-error">Cancel</button></td>
+                                <td>{!a.paid &&<button onClick={() => handleDelete(a._id)} class="btn btn-xs btn-error">Cancel</button>}</td>
                                 <td>
                                     {(a.price && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
-                                    {(a.price && a.paid) && <span className='text-success'>paid</span>}
+                                    {(a.price && a.paid) && <div>
+                                        <p><span className='text-success'>paid</span></p>
+                                        <p>Transaction id: <span className='text-success'>{a.transactionId}</span></p>
+                                        </div>}
                                 </td>
                             </tr>)
                         }
