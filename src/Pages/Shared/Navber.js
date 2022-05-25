@@ -2,7 +2,7 @@ import {signOut } from 'firebase/auth';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
-import titleImage from '../../assets/images/manufacture-title-image.png'
+import titleImage from '../../assets/images/jr-icon (1).png'
 import auth from '../../firebase.init';
 import Loading from './Loading';
 
@@ -45,7 +45,7 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <a class="btn btn-ghost normal-case text-xl"><img src={titleImage} /></a>
+                <a class="btn btn-ghost normal-case text-xl"><img className='w-16' src={titleImage} alt="" /></a>
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">
