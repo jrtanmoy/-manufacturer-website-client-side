@@ -49,13 +49,13 @@ const AddProduct = () => {
                             <input className="input input-bordered w-full max-w-xs mt-1" type="text" name="name" placeholder='Product Name' required />
                             <br />
                             <input className="input input-bordered w-full max-w-xs mt-1" type="number"
-                            name="price" placeholder='Price' required />
+                                name="price" placeholder='Price' required />
                             <br />
                             <input className="input input-bordered w-full max-w-xs mt-1" type="number"
-                            name="minimumQuantity" placeholder='Minimum Quantity' required />
+                                name="minimumQuantity" placeholder='Minimum Quantity' required />
                             <br />
                             <input className="input input-bordered w-full max-w-xs mt-1" type="number"
-                            name="availableQuantity" placeholder='Available Quantity' required />
+                                name="availableQuantity" placeholder='Available Quantity' required />
                             <br />
                             <input className="input input-bordered w-full max-w-xs mt-1" type="text" name="description" placeholder='Description' required />
                             <br />

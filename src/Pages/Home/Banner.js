@@ -15,7 +15,7 @@ const Banner = () => {
                     <h1 className='text-4xl font-bold text-primary'>Manufacturer</h1>
                 </div>
             </div>
-            <div className="hero mt-20 ">
+            <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img src={banner} className="max-w-lg rounded-lg shadow-2xl" alt='' />
                     <div>

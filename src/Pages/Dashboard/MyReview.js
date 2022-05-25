@@ -14,14 +14,12 @@ const MyReview = () => {
         const rattingQuantity = parseInt(event.target.ratting.value)
         console.log(rattingQuantity);
 
-        if((0 >= rattingQuantity) || (rattingQuantity >= 6)){
+        if ((0 >= rattingQuantity) || (rattingQuantity >= 6)) {
             toast(`you have to ratting between 1 to 5 quantity`)
             setDisabled(true);
             event.target.reset();
             return;
         }
-
-
 
 
         const review = {
@@ -66,7 +64,7 @@ const MyReview = () => {
                             <input className="input input-bordered w-full max-w-xs mt-1" type="email" value={user?.email} name="email" placeholder='email' required readOnly disabled />
                             <br />
                             <input className="input input-bordered w-full max-w-xs mt-1" type="number"
-                            name="ratting" placeholder='Ratting (should be 1 to 5)' required />
+                                name="ratting" placeholder='Ratting (should be 1 to 5)' required />
                             <br />
                             <input className="input input-bordered w-full max-w-xs mt-1" type="text" name="description" placeholder='Description' required />
                             <br />

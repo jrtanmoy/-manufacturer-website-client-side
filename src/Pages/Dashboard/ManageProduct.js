@@ -8,7 +8,7 @@ const ManageProduct = () => {
         fetch('http://localhost:5000/tool')
             .then(res => res.json())
             .then(data => setTools(data));
-    }, )
+    })
 
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');

@@ -61,11 +61,11 @@ const CheckoutForm = ({ order }) => {
             },
         );
 
-        if(intentError){
+        if (intentError) {
             setCardError(intentError?.message);
             setProcessing(false);
         }
-        else{
+        else {
             setCardError('');
             setTransactionId(paymentIntent.id);
             console.log(paymentIntent);
@@ -84,11 +84,11 @@ const CheckoutForm = ({ order }) => {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 },
                 body: JSON.stringify(payment)
-            }).then(res=>res.json())
-            .then(data => {
-                setProcessing(false);
-                console.log(data);
-            })
+            }).then(res => res.json())
+                .then(data => {
+                    setProcessing(false);
+                    console.log(data);
+                })
 
         }
     }

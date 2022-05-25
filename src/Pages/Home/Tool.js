@@ -20,7 +20,7 @@ const Tool = ({ tool }) => {
                 <p><span className='font-bold'>Available Order Quantity : {availableQuantity} unit</span></p>
                 <p><span className='font-bold'>Description</span> : {description}</p>
                 <div class="card-actions justify-center">
-                    <button  onClick={() => navigateToToolDetail(_id)} class="btn btn-secondary text-white uppercase">Book Now</button>
+                    <button onClick={() => navigateToToolDetail(_id)} class="btn btn-secondary text-white uppercase">Book Now</button>
                 </div>
             </div>
         </div>

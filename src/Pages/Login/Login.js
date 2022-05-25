@@ -23,7 +23,7 @@ const Login = () => {
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
-    useEffect( () =>{
+    useEffect(() => {
         if (token) {
             navigate(from, { replace: true });
         }
@@ -32,8 +32,8 @@ const Login = () => {
     if (loading || gLoading) {
         return <Loading></Loading>
     }
-    if(error || gError){
-        signInError= <p className='text-red-500'><small>{error?.message || gError?.message }</small></p>
+    if (error || gError) {
+        signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
     }
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password);

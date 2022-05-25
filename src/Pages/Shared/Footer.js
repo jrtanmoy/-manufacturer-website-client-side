@@ -1,13 +1,10 @@
 import React from 'react';
-import footer from '../../assets/images/footer.png';
+
 import payment from '../../assets/images/payment-card1.png'
 
 const Footer = () => {
     return (
-        <footer style={{
-            background: `url(${footer})`,
-            backgroundSize: 'cover'
-        }} className="p-10">
+        <footer className="p-10">
             <div className='footer my-20'>
                 <div>
                     <span className="footer-title">Contact Us</span>

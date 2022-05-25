@@ -6,9 +6,9 @@ const Contact = () => {
     return (
         <div>
             <div>
-            <h1 className='text-4xl text-secondary text-center font-bold my-8'>
-                Contact Us
-            </h1>
+                <h1 className='text-4xl text-secondary text-center font-bold my-8'>
+                    Contact Us
+                </h1>
             </div>
             <div style={{
                 background: `url(${toolsBackground})`, backgroundRepeat: "no-repeat", backgroundSize: "cover",

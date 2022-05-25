@@ -10,7 +10,7 @@ const Testimonials = () => {
             .then(res => res.json())
             .then(data => setReviews(data));
     }, [])
-    
+
     return (
         <section className='my-28'>
             <div className='flex justify-between'>

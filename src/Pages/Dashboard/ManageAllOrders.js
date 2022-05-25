@@ -7,7 +7,7 @@ import ManageAllOrderRow from './ManageAllOrderRow';
 const ManageAllOrders = () => {
     const { data: purchases, isLoading, refetch } = useQuery('purchases', () => fetch('https://pure-anchorage-71737.herokuapp.com/purchases', {
         method: 'GET',
-        headers:{
+        headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
     }).then(res => res.json()));
@@ -30,14 +30,14 @@ const ManageAllOrders = () => {
                         </tr>
                     </thead>
                     <tbody>
-                       {
-                           purchases.map((purchase, index)=><ManageAllOrderRow
-                           key={purchase._id}
-                           purchase={purchase}
-                           index={index}
-                           refetch={refetch}
-                           ></ManageAllOrderRow>)
-                       }
+                        {
+                            purchases.map((purchase, index) => <ManageAllOrderRow
+                                key={purchase._id}
+                                purchase={purchase}
+                                index={index}
+                                refetch={refetch}
+                            ></ManageAllOrderRow>)
+                        }
                     </tbody>
                 </table>
             </div>

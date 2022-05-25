@@ -32,16 +32,15 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/purchase/:toolId' element={<RequireAuth><ToolDetail /></RequireAuth>} />
         <Route path='/dashboard' element={<RequireAuth><Dashboard /></RequireAuth>} >
-            <Route path='order' element={<MyOrders></MyOrders>}></Route>
-            <Route path='payment/:id' element={<Payment></Payment>}></Route>
-            <Route path='review' element={<MyReview></MyReview>}></Route>
-            <Route path='profile' element={<MyProfile></MyProfile>}></Route>
-            <Route path='users' element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
-            <Route path='manageOrder' element={<RequireAdmin><ManageAllOrders></ManageAllOrders></RequireAdmin>}></Route>
-            <Route path='addproduct' element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>}></Route>
-            <Route path='manageproduct' element={<RequireAdmin><ManageProduct></ManageProduct></RequireAdmin>}></Route>
-          </Route>
-        <Route path='/about' element={<About />} />
+          <Route path='order' element={<MyOrders></MyOrders>}></Route>
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
+          <Route path='review' element={<MyReview></MyReview>}></Route>
+          <Route path='profile' element={<MyProfile></MyProfile>}></Route>
+          <Route path='users' element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
+          <Route path='manageOrder' element={<RequireAdmin><ManageAllOrders></ManageAllOrders></RequireAdmin>}></Route>
+          <Route path='addproduct' element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>}></Route>
+          <Route path='manageproduct' element={<RequireAdmin><ManageProduct></ManageProduct></RequireAdmin>}></Route>
+        </Route>
         <Route path='/blog' element={<Blogs />} />
         <Route path='/portfolio' element={<MyPortfolio />} />
         <Route path='/contact' element={<Contact />} />

@@ -1,4 +1,4 @@
-import {signOut } from 'firebase/auth';
+import { signOut } from 'firebase/auth';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
@@ -9,8 +9,8 @@ import Loading from './Loading';
 const Navbar = () => {
 
     const [user, loading] = useAuthState(auth);
-    
-    if(loading){
+
+    if (loading) {
         return <Loading></Loading>
     }
     console.log(user);
@@ -18,12 +18,11 @@ const Navbar = () => {
     const logout = () => {
         signOut(auth);
         localStorage.removeItem('accessToken');
-      };
+    };
 
     const menuItems = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/contact">Contact</Link></li>
-        <li><Link to="/about">About</Link></li>
         <li><Link to="/blog">Blogs</Link></li>
         <li><Link to="/portfolio">My Portfolio</Link></li>
         {

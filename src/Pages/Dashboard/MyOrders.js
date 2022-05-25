@@ -61,7 +61,7 @@ const MyOrders = () => {
                             <th>Name</th>
                             <th>Item Name</th>
                             <th>Quantity</th>
-                            <th>Price</th>
+                            <th>Total Price</th>
                             <th>Cancel Item</th>
                             <th>Payment</th>
                         </tr>
@@ -75,13 +75,13 @@ const MyOrders = () => {
                                 {/* <td>{a._id}</td> */}
                                 <td>{a.quantity}</td>
                                 <td>${a.price * a.quantity}</td>
-                                <td>{!a.paid &&<button onClick={() => handleDelete(a._id)} class="btn btn-xs btn-error">Cancel</button>}</td>
+                                <td>{!a.paid && <button onClick={() => handleDelete(a._id)} class="btn btn-xs btn-error">Cancel</button>}</td>
                                 <td>
                                     {(a.price && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
                                     {(a.price && a.paid) && <div>
                                         <p><span className='text-success'>paid</span></p>
                                         <p>Transaction id: <span className='text-success'>{a.transactionId}</span></p>
-                                        </div>}
+                                    </div>}
                                 </td>
                             </tr>)
                         }

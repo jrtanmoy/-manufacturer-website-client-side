@@ -24,25 +24,25 @@ const ToolDetail = () => {
     const handlePurchase = event => {
         event.preventDefault();
 
-        const {minimumQuantity} = tool;
+        const { minimumQuantity } = tool;
         const minQuantity = parseInt(minimumQuantity)
         console.log(minQuantity);
-        const {availableQuantity} = tool;
+        const { availableQuantity } = tool;
         const availQuantity = parseInt(availableQuantity)
         console.log(availQuantity);
 
         const quantity = parseInt(event.target.quantity.value)
         console.log(quantity);
-        
 
-        if(quantity < minQuantity){
-            toast(`you have to purchase at last ${minQuantity} quantity`)
+
+        if (quantity < minQuantity) {
+            toast.error(`you have to purchase at last ${minQuantity} quantity`)
             setDisabled(true);
             event.target.reset();
             return;
         }
-        if(availQuantity < quantity){
-            toast(`you can order maximum ${availQuantity} quantity`)
+        if (availQuantity < quantity) {
+            toast.error(`you can order maximum ${availQuantity} quantity`)
             setDisabled(true);
             event.target.reset();
             return;
@@ -66,13 +66,13 @@ const ToolDetail = () => {
             },
             body: JSON.stringify(purchase)
         })
-        .then(res => res.json())
-        .then(data => {
-            if (data.insertedId) {
-                toast('You successfully purchase the item!!');
-                event.target.reset();
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    toast('You successfully purchase the item!!');
+                    event.target.reset();
+                }
+            })
 
 
     }
@@ -100,20 +100,35 @@ const ToolDetail = () => {
                             <h5 className='text-xl mb-6'>Please Purchase</h5>
                             <form className='mt-6' onSubmit={handlePurchase}>
 
+                                <span className='text-left'>Name: </span>
+                                <br />
                                 <input className="input input-bordered w-full max-w-xs mt-1" type="text" value={user?.displayName} name="name" placeholder='name' required readOnly disabled />
+                                <br />
+                                <span className='text-left'>Email: </span>
                                 <br />
                                 <input className="input input-bordered w-full max-w-xs mt-1" type="email" value={user?.email} name="email" placeholder='email' required readOnly disabled />
                                 <br />
-                                <input className="input input-bordered w-full max-w-xs mt-1" type="text" value={tool.name} name="productName" placeholder='product name' required readOnly disabled />
-                                <input className="input input-bordered w-full max-w-xs mt-1" type="text" name="address" placeholder='Address'  />
+                                <span className='text-left'>Product name: </span>
                                 <br />
-                                <input className="input input-bordered w-full max-w-xs mt-1" type="text" name="phone" placeholder="Phone Number"  />
+                                <input className="input input-bordered w-full max-w-xs mt-1" type="text" value={tool.name} name="productName" placeholder='product name' required readOnly disabled />
+                                <br />
+                                <span className='text-left'>Address: </span>
+                                <br />
+                                <input className="input input-bordered w-full max-w-xs mt-1" type="text" name="address" placeholder='Address' />
+                                <br />
+                                <span className='text-left'>Phone Number: </span>
+                                <br />
+                                <input className="input input-bordered w-full max-w-xs mt-1" type="text" name="phone" placeholder="Phone Number" />
+                                <br />
+                                <span className='text-left'>Price: /per unit </span>
                                 <br />
                                 <input className="input input-bordered w-full max-w-xs mt-1" type="text"
-                                value={ tool.price } name="priceperunit" placeholder="Price"  />
+                                    value={tool.price} name="priceperunit" placeholder="Price" required readOnly disabled />
+                                <br />
+                                <span className='text-left'>Quantity: </span>
                                 <br />
                                 <input className="input input-bordered w-full max-w-xs mt-1" type="number"
-                                defaultValue={tool.minimumQuantity} name="quantity" placeholder='Quantity' required />
+                                    defaultValue={tool.minimumQuantity} name="quantity" placeholder='Quantity' required />
                                 <br />
                                 <button className="btn mt-2" type='submit' disabled={isDisabled}>Purchase</button>
                             </form>

@@ -27,7 +27,7 @@ const ManageAllOrderRow = ({ purchase, refetch, index }) => {
         }
     }
 
-    const handleUpdateStatus = id =>{
+    const handleUpdateStatus = id => {
         setApproved(false);
     }
 
@@ -38,8 +38,9 @@ const ManageAllOrderRow = ({ purchase, refetch, index }) => {
             <td>{name}</td>
             <td>{email}</td>
             <td>
-                {(paid && approved ) ? <p>pending</p> : <p>shipped </p>  }
-                {!paid && <p>unpaid</p> }
+                {(paid && approved) && <p>pending</p>}
+                {(paid && !approved) && <p>shiped</p>}
+                {(!paid && approved) && <p>unpaid</p>}
             </td>
             <td>
                 {!paid && <button onClick={() => handleDelete(_id)} class="btn btn-xs">cancel order</button>}
