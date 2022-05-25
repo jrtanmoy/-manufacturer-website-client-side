@@ -9,7 +9,7 @@ const ManageAllOrderRow = ({ purchase, refetch,index }) => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            fetch(`http://localhost:5000/purchases/${id}`, {
+            fetch(`https://pure-anchorage-71737.herokuapp.com/purchases/${id}`, {
                 method: 'DELETE',
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`

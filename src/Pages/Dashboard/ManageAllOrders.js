@@ -5,7 +5,7 @@ import ManageAllOrderRow from './ManageAllOrderRow';
 
 
 const ManageAllOrders = () => {
-    const { data: purchases, isLoading, refetch } = useQuery('purchases', () => fetch('http://localhost:5000/purchases', {
+    const { data: purchases, isLoading, refetch } = useQuery('purchases', () => fetch('https://pure-anchorage-71737.herokuapp.com/purchases', {
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

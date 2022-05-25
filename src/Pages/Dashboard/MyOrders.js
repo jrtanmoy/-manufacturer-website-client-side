@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import {useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
@@ -13,21 +13,21 @@ const MyOrders = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/purchase?email=${user.email}`, {
+            fetch(`https://pure-anchorage-71737.herokuapp.com/purchase?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 }
             })
-            .then(res => {
-                // console.log('res', res);
-                if (res.status === 401 || res.status === 403) {
-                    signOut(auth);
-                    localStorage.removeItem('accessToken');
-                    navigate('/');
-                }
-                return res.json()
-            })
+                .then(res => {
+                    // console.log('res', res);
+                    if (res.status === 401 || res.status === 403) {
+                        signOut(auth);
+                        localStorage.removeItem('accessToken');
+                        navigate('/');
+                    }
+                    return res.json()
+                })
                 .then(data => {
                     setPurchases(data)
                 });
@@ -37,7 +37,7 @@ const MyOrders = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            fetch(`http://localhost:5000/purchase/${id}`, {
+            fetch(`https://pure-anchorage-71737.herokuapp.com/purchase/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())
@@ -63,6 +63,7 @@ const MyOrders = () => {
                             <th>Quantity</th>
                             <th>Price</th>
                             <th>Cancel Item</th>
+                            <th>Payment</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -73,8 +74,12 @@ const MyOrders = () => {
                                 <td>{a.productname}</td>
                                 {/* <td>{a._id}</td> */}
                                 <td>{a.quantity}</td>
-                                <td>{a.price}</td>
+                                <td>${a.price * a.quantity}</td>
                                 <td><button onClick={() => handleDelete(a._id)} class="btn btn-xs btn-error">Cancel</button></td>
+                                <td>
+                                    {(a.price && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
+                                    {(a.price && a.paid) && <span className='text-success'>pay</span>}
+                                </td>
                             </tr>)
                         }
 

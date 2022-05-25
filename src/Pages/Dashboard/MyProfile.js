@@ -20,7 +20,7 @@ const MyProfile = () => {
         }
         console.log(userinfo);
 
-        const url = `http://localhost:5000/userinfo/${user.email}`;
+        const url = `https://pure-anchorage-71737.herokuapp.com/userinfo/${user.email}`;
         fetch(url, {
             method: 'PUT',
             headers: {

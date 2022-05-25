@@ -14,7 +14,7 @@ const ToolDetail = () => {
 
 
     useEffect(() => {
-        const url = `http://localhost:5000/tool/${toolId}`
+        const url = `https://pure-anchorage-71737.herokuapp.com/tool/${toolId}`
 
         fetch(url)
             .then(res => res.json())
@@ -54,12 +54,12 @@ const ToolDetail = () => {
             productname: event.target.productName.value,
             address: event.target.address.value,
             phone: event.target.phone.value,
-            price: event.target.price.value,
+            price: event.target.priceperunit.value,
             quantity: event.target.quantity.value
 
         }
 
-        fetch('http://localhost:5000/purchase', {
+        fetch('https://pure-anchorage-71737.herokuapp.com/purchase', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -110,7 +110,7 @@ const ToolDetail = () => {
                                 <input className="input input-bordered w-full max-w-xs mt-1" type="text" name="phone" placeholder="Phone Number"  />
                                 <br />
                                 <input className="input input-bordered w-full max-w-xs mt-1" type="text"
-                                value={"$" + tool.price + " /per unit"} name="price" placeholder="Price"  />
+                                value={ tool.price } name="priceperunit" placeholder="Price"  />
                                 <br />
                                 <input className="input input-bordered w-full max-w-xs mt-1" type="number"
                                 defaultValue={tool.minimumQuantity} name="quantity" placeholder='Quantity' required />
