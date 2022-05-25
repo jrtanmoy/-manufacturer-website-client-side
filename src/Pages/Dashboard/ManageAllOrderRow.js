@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
 
-const ManageAllOrderRow = ({ purchase, refetch,index }) => {
-    const {productname, name, email, _id } = purchase;
+const ManageAllOrderRow = ({ purchase, refetch, index }) => {
+    const { productname, name, email, _id, paid } = purchase;
+    const [approved, setApproved] = useState(true);
 
 
     const handleDelete = id => {
@@ -25,14 +26,27 @@ const ManageAllOrderRow = ({ purchase, refetch,index }) => {
                 })
         }
     }
+
+    const handleUpdateStatus = id =>{
+        setApproved(false);
+    }
+
     return (
         <tr>
             <th>{index + 1}</th>
             <td>{productname}</td>
             <td>{name}</td>
             <td>{email}</td>
-            <td><button onClick={() => handleDelete(_id)} class="btn btn-xs">cancel order</button></td>
-        </tr>
+            <td>
+                {(paid && approved ) ? <p>pending</p> : <p>shipped </p>  }
+                {!paid && <p>unpaid</p> }
+            </td>
+            <td>
+                {!paid && <button onClick={() => handleDelete(_id)} class="btn btn-xs">cancel order</button>}
+                {paid && <button onClick={() => handleUpdateStatus(_id)} class="btn btn-success btn-xs">update status</button>}
+
+            </td>
+        </tr >
     );
 };
 
