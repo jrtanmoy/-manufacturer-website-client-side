@@ -19,6 +19,7 @@ import MyReview from './Pages/Dashboard/MyReview';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import Users from './Pages/Dashboard/Users';
 import RequireAdmin from './Pages/Login/RequireAdmin';
+import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
 
 function App() {
   return (
@@ -28,10 +29,11 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/purchase/:toolId' element={<RequireAuth><ToolDetail /></RequireAuth>} />
         <Route path='/dashboard' element={<RequireAuth><Dashboard /></RequireAuth>} >
-            <Route index element={<MyOrders></MyOrders>}></Route>
+            <Route path='order' element={<MyOrders></MyOrders>}></Route>
             <Route path='review' element={<MyReview></MyReview>}></Route>
             <Route path='profile' element={<MyProfile></MyProfile>}></Route>
             <Route path='users' element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
+            <Route path='manageOrder' element={<RequireAdmin><ManageAllOrders></ManageAllOrders></RequireAdmin>}></Route>
           </Route>
         <Route path='/about' element={<About />} />
         <Route path='/blog' element={<Blogs />} />
