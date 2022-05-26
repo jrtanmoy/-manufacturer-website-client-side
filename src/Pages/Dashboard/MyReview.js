@@ -15,7 +15,7 @@ const MyReview = () => {
         console.log(rattingQuantity);
 
         if ((0 >= rattingQuantity) || (rattingQuantity >= 6)) {
-            toast(`you have to ratting between 1 to 5 quantity`)
+            toast.error(`you have to ratting between 1 to 5 quantity`)
             setDisabled(true);
             event.target.reset();
             return;
