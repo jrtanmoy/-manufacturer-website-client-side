@@ -43,8 +43,8 @@ const ManageAllOrderRow = ({ purchase, refetch, index }) => {
                 {(!paid && approved) && <p>unpaid</p>}
             </td>
             <td>
-                {!paid && <button onClick={() => handleDelete(_id)} class="btn btn-xs">cancel order</button>}
-                {paid && <button onClick={() => handleUpdateStatus(_id)} class="btn btn-success btn-xs">update status</button>}
+                {!paid && <button onClick={() => handleDelete(_id)} className="btn btn-xs">cancel order</button>}
+                {paid && <button onClick={() => handleUpdateStatus(_id)} className="btn btn-success btn-xs">update status</button>}
 
             </td>
         </tr >

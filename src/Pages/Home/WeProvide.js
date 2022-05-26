@@ -8,7 +8,7 @@ const WeProvide = () => {
     return (
         <section className='my-40'>
             <h1 className='text-4xl text-secondary text-center font-bold my-8'>We Provide</h1>
-            <div class="divider mb-10"></div>
+            <div className="divider mb-10"></div>
             <div className='footer gap-x-10'>
                 <div className='flex gap-x-2'>
                     <span>
@@ -51,7 +51,7 @@ const WeProvide = () => {
                     </span>
                 </div>
             </div>
-            <div class="divider mt-10"></div>
+            <div className="divider mt-10"></div>
         </section>
     );
 };

@@ -32,8 +32,8 @@ const ManageProduct = () => {
     return (
         <div>
             <h2 className='text-lg mt-4 font-bold'>All Product: {tools.length}</h2>
-            <div class="overflow-x-auto mt-8">
-                <table class="table w-full">
+            <div className="overflow-x-auto mt-8">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>
@@ -50,8 +50,8 @@ const ManageProduct = () => {
                             tools.map((a, index) => <tr key={a._id}>
                                 <th>{index + 1}</th>
                                 <td>
-                                    <div class="avatar">
-                                        <div class="w-12 rounded-full">
+                                    <div className="avatar">
+                                        <div className="w-12 rounded-full">
                                             <img src={a.img} alt="" />
                                         </div>
                                     </div>
@@ -60,7 +60,7 @@ const ManageProduct = () => {
                                 <td>${a.price} /per unit</td>
                                 <td>{a.minimumQuantity}</td>
                                 <td>{a.availableQuantity}</td>
-                                <td>{<button onClick={() => handleDelete(a._id)} class="btn btn-xs btn-error">Cancel</button>}</td>
+                                <td>{<button onClick={() => handleDelete(a._id)} className="btn btn-xs btn-error">Cancel</button>}</td>
 
                             </tr>)
                         }

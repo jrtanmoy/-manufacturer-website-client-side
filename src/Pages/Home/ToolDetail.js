@@ -83,10 +83,10 @@ const ToolDetail = () => {
         <div>
             <h2 className='text-4xl text-secondary text-center font-bold my-8'>Welcome to detail</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-16'>
-                <div class="card lg:max-w-lg bg-base-100 shadow-xl">
+                <div className="card lg:max-w-lg bg-base-100 shadow-xl">
                     <figure><img src={tool.img} alt="Shoes" /></figure>
-                    <div class="card-body mt-5">
-                        <h2 class="card-title text-secondary">{tool.name}</h2>
+                    <div className="card-body mt-5">
+                        <h2 className="card-title text-secondary">{tool.name}</h2>
                         <p><span className='font-bold'>Price</span> : ${tool.price} /per unit</p>
                         <p><span className='font-bold'>Minimum Order Quantity : {tool.minimumQuantity} unit</span></p>
                         <p><span className='font-bold'>Available Order Quantity : {tool.availableQuantity} unit</span></p>

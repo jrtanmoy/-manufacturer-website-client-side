@@ -49,9 +49,9 @@ const MyProfile = () => {
         <div>
             <h2 className='text-4xl text-secondary text-center font-bold my-8'>Your profile is here!!!!!</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-16'>
-                <div class="card lg:max-w-lg bg-base-100 shadow-xl">
-                    <div class="card-body mt-5">
-                        <h2 class="card-title text-secondary">Your info:</h2>
+                <div className="card lg:max-w-lg bg-base-100 shadow-xl">
+                    <div className="card-body mt-5">
+                        <h2 className="card-title text-secondary">Your info:</h2>
                         <p><span className='font-bold'>Name : ${user?.displayName}</span></p>
                         <p><span className='font-bold'>Email : {user?.email}</span></p>
                     </div>
