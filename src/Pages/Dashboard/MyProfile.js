@@ -9,6 +9,7 @@ const MyProfile = () => {
     const handleUpdate = event => {
         event.preventDefault();
 
+        // get input data and store
         const userinfo = {
             name: user.displayName,
             email: user.email,
@@ -20,6 +21,7 @@ const MyProfile = () => {
         }
         console.log(userinfo);
 
+        // update data from database
         const url = `https://pure-anchorage-71737.herokuapp.com/userinfo/${user.email}`;
         fetch(url, {
             method: 'PUT',

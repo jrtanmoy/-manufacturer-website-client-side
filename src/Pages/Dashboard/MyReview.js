@@ -14,6 +14,7 @@ const MyReview = () => {
         const rattingQuantity = parseInt(event.target.ratting.value)
         console.log(rattingQuantity);
 
+        // implement condition
         if ((0 >= rattingQuantity) || (rattingQuantity >= 6)) {
             toast.error(`you have to ratting between 1 to 5 quantity`)
             setDisabled(true);
@@ -22,6 +23,7 @@ const MyReview = () => {
         }
 
 
+        // get data from input field 
         const review = {
             name: user.displayName,
             email: user.email,
@@ -30,6 +32,8 @@ const MyReview = () => {
 
         }
         console.log(review);
+
+        // post data to database
         fetch('https://pure-anchorage-71737.herokuapp.com/review', {
             method: 'POST',
             headers: {

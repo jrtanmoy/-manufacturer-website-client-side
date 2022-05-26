@@ -34,7 +34,7 @@ const ToolDetail = () => {
         const quantity = parseInt(event.target.quantity.value)
         console.log(quantity);
 
-
+        // implement condition
         if (quantity < minQuantity) {
             toast.error(`you have to purchase at last ${minQuantity} quantity`)
             setDisabled(true);
@@ -48,6 +48,7 @@ const ToolDetail = () => {
             return;
         }
 
+        // get data from input
         const purchase = {
             name: user.displayName,
             email: user.email,

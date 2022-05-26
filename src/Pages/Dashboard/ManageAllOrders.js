@@ -5,6 +5,8 @@ import ManageAllOrderRow from './ManageAllOrderRow';
 
 
 const ManageAllOrders = () => {
+
+    // get data from database
     const { data: purchases, isLoading, refetch } = useQuery('purchases', () => fetch('https://pure-anchorage-71737.herokuapp.com/purchases', {
         method: 'GET',
         headers: {

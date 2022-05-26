@@ -6,7 +6,7 @@ const ManageAllOrderRow = ({ purchase, refetch, index }) => {
     const { productname, name, email, _id, paid } = purchase;
     const [approved, setApproved] = useState(true);
 
-
+    // delete data from database
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
@@ -27,6 +27,7 @@ const ManageAllOrderRow = ({ purchase, refetch, index }) => {
         }
     }
 
+    // update status
     const handleUpdateStatus = id => {
         setApproved(false);
     }

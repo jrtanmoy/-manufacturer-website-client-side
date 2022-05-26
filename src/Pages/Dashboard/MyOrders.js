@@ -34,6 +34,7 @@ const MyOrders = () => {
         }
     })
 
+      // delete data from database
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {

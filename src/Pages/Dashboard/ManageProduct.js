@@ -5,15 +5,16 @@ const ManageProduct = () => {
     const [tools, setTools] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/tool')
+        fetch('https://pure-anchorage-71737.herokuapp.com/tool')
             .then(res => res.json())
             .then(data => setTools(data));
     })
 
+    // delete data from database
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            fetch(`http://localhost:5000/tool/${id}`, {
+            fetch(`https://pure-anchorage-71737.herokuapp.com/tool/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

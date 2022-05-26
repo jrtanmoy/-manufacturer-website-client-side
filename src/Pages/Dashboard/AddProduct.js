@@ -6,6 +6,7 @@ const AddProduct = () => {
     const handleAddProduct = event => {
         event.preventDefault();
 
+        // get data from input field and store
         const product = {
             name: event.target.name.value,
             price: event.target.price.value,
