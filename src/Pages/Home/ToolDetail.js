@@ -81,7 +81,7 @@ const ToolDetail = () => {
 
     return (
         <div>
-            <h2 className='text-4xl text-secondary text-center font-bold my-8'>Welcome to detail</h2>
+            <h2 className='text-4xl text-secondary text-center font-bold my-8'>Welcome to Purchase</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-16'>
                 <div className="card lg:max-w-lg bg-base-100 shadow-xl">
                     <figure><img src={tool.img} alt="Shoes" /></figure>
